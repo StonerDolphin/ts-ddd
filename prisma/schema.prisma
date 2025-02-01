@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Region {
+  id    String  @id @default(uuid())
+  name  String
+  Place Place[]
+}
+
+model Place {
+  id       String @id @default(uuid())
+  city     String
+  regionId String
+  region   Region @relation(fields: [regionId], references: [id])
+  postcode String
+  User     User[]
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+model User {
+  id       String @id @default(uuid())
+  email    String @unique
+  username String
+  phone    String
+  password String
+  gender   Gender
+  place    Place  @relation(fields: [placeId], references: [id])
+  placeId  String
+}
