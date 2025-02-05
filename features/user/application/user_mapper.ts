@@ -1,6 +1,6 @@
-import {User} from "~/features/user/domain/user";
-import {UserResponse} from "~/features/user/application/user_response";
-import { PlaceMapper } from "~/features/user/feature/location/application/place_mapper";
+import {User} from "~~/features/user/domain/user";
+import {UserResponse} from "~~/features/user/application/user_response";
+import { PlaceMapper } from "~~/features/user/feature/location/application/place_mapper";
 
 export class UserMapper{
 

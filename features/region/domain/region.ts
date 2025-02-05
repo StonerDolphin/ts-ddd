@@ -1,4 +1,4 @@
-import { UUID } from "~/features/shared/value_object_uuid";
+import { UUID } from "~~/features/shared/value_object_uuid";
 
 export class Region {
     private constructor(

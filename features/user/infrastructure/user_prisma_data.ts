@@ -1,11 +1,10 @@
-
-import type { Gender, PrismaClient } from "@prisma/client";
+import type { Gender, PrismaClient, User as UserEntity } from "@prisma/client";
 import type { UserRepository } from "../domain/user_repository";
 import { User } from "../domain/user";
 import { Password } from "../domain/value-objects/psw_value_object";
 import { Email } from "../domain/value-objects/email_value_object";
 import bcrypt from "bcrypt"
-import { Place } from "~/features/user/feature/location/domain/place";
+import { Place } from "~~/features/user/feature/location/domain/place";
 
 export class UserPrismaData implements UserRepository {
     constructor(readonly repo: PrismaClient) { }
@@ -21,8 +20,11 @@ export class UserPrismaData implements UserRepository {
                 phone: user.phone.value,
                 gender: user.gender.value as Gender,
                 place: {
-                    connect: {
-                        id: user.place.id.value
+                    create: {
+                        id: user.place.id.value,
+                        city: user.place.city.value,
+                        regionId: user.place.region.id.value,
+                        postcode: user.place.postcode.value
                     }
                 },
                 password: hashedPassword
@@ -31,23 +33,27 @@ export class UserPrismaData implements UserRepository {
     }
 
     async login(email: Email, password: Password): Promise<User> {
-        const user = await this.repo.user.findUniqueOrThrow({
+        const user: UserEntity = await this.repo.user.findUniqueOrThrow({
             where: {
                 email: email.value
             },
             include: {
                 place: {
-                    region: true
+                    include:{
+                        region: true
+                    }
                 }
             }
         })
         const isPasswordValid = await bcrypt.compare(password.value, user.password)
         if (!isPasswordValid) throw new Error("Invalid password")
+        console.log(user)
         return User.fromPrimitive(
             user.id,
             user.username,
             user.email,
             user.phone, user.gender,
-            Place.fromPrimitive(user.place.id, user.place.city, user.place.state, user.place.postcode))
+            //@ts-ignore
+            Place.fromPrimitive(user.place.id, user.place.city, user.place.region, user.place.postcode))
     }
 }

@@ -1,4 +1,4 @@
-import {InvalidStateException} from "~/features/user/feature/location/domain/Exceptions/state_exception";
+import {InvalidStateException} from "~~/features/user/feature/location/domain/Exceptions/state_exception";
 
 export class State{
     private constructor(readonly value: string) {}

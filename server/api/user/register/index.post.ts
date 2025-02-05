@@ -1,5 +1,6 @@
-import { UserRequest } from "~/features/user/application/user_request";
-import { service } from "~/server/dependencies/user";
+import { UserRequest } from "~~/features/user/application/user_request"
+import { service } from "~~/server/utils/dependencies/user"
+
 
 
 export default defineEventHandler(async (event) => {

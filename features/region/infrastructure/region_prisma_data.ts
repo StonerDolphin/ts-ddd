@@ -1,4 +1,4 @@
-import type { PrismaClient } from "@prisma/client";
+import type { PrismaClient, Region as RegionEntity } from "@prisma/client";
 import type { RegionRepository } from "../domain/region_repository";
 import { Region } from "../domain/region";
 
@@ -10,7 +10,7 @@ export class RegionPrismaData implements RegionRepository {
     async create(region: Region): Promise<void> {
         await this.repo.region.create({
             data: {
-                id: region.id,
+                id: region.id.value,
                 name: region.name,
                 // Add other fields as necessary
             }
@@ -18,7 +18,7 @@ export class RegionPrismaData implements RegionRepository {
     }
 
     async search(name: string, offset: number, limit: number): Promise<Region[]> {
-        const regions = await this.repo.region.findMany({
+        const regions: RegionEntity[] = await this.repo.region.findMany({
             where: {
                 name: {
                     contains: name,

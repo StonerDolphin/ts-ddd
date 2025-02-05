@@ -1,8 +1,8 @@
-import { CreateRegion } from "~/features/region/application/create_region";
-import { RegionDto } from "~/features/region/application/region_dto";
-import { SearchRegion } from "~/features/region/application/search_region";
-import { Region } from "~/features/region/domain/region";
-import { RegionRepository } from "~/features/region/domain/region_repository";
+import { CreateRegion } from "~~/features/region/application/create_region";
+import { RegionDto } from "~~/features/region/application/region_dto";
+import { SearchRegion } from "~~/features/region/application/search_region";
+import { Region } from "~~/features/region/domain/region";
+import { RegionRepository } from "~~/features/region/domain/region_repository";
 
 export class RegionService {
     constructor(private create: CreateRegion, private search: SearchRegion) { }

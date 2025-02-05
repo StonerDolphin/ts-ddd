@@ -1,5 +1,5 @@
 import {v4, validate} from "uuid";
-import {InvalidUUID} from "~/features/shared/uuid_exception";
+import {InvalidUUID} from "~~/features/shared/uuid_exception";
 
 export class UUID {
     private constructor(readonly value: string) {}

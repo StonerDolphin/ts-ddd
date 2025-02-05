@@ -1,4 +1,4 @@
-import { service } from "~/server/dependencies/region";
+import { service } from "~~/server/utils/dependencies/region";
 
 
 export default defineEventHandler(async (event) => {

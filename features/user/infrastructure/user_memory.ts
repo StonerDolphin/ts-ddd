@@ -1,7 +1,7 @@
-import {User} from "~/features/user/domain/user";
-import type {UserRepository} from "~/features/user/domain/user_repository";
-import type {Email} from "~/features/user/domain/value-objects/email_value_object";
-import type {Password} from "~/features/user/domain/value-objects/psw_value_object";
+import {User} from "~~/features/user/domain/user";
+import type {UserRepository} from "~~/features/user/domain/user_repository";
+import type {Email} from "~~/features/user/domain/value-objects/email_value_object";
+import type {Password} from "~~/features/user/domain/value-objects/psw_value_object";
 import bcrypt from "bcrypt";
 
 export class UserMemory implements UserRepository {

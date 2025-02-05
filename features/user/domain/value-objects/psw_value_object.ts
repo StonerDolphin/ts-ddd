@@ -5,7 +5,7 @@ import {
     PasswordMissingUppercaseError,
     PasswordTooLongError,
     PasswordTooShortError
-} from "~/features/user/domain/exceptions/password_exception";
+} from "~~/features/user/domain/exceptions/password_exception";
 
 export class Password{
     private constructor(

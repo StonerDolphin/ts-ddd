@@ -1,7 +1,7 @@
-import {CreateUser} from "~/features/user/application/create_user";
-import {UserRequest} from "~/features/user/application/user_request";
-import {LoginUser} from "~/features/user/application/login_user";
-import {User} from "~/features/user/domain/user";
+import {CreateUser} from "~~/features/user/application/create_user";
+import {UserRequest} from "~~/features/user/application/user_request";
+import {LoginUser} from "~~/features/user/application/login_user";
+import {User} from "~~/features/user/domain/user";
 
 export class UserService {
     constructor(readonly createUser: CreateUser, readonly loginUser: LoginUser) {}

@@ -1,6 +1,6 @@
-import { Region } from "~/features/region/domain/region";
-import type { PlaceDto } from "~/features/user/feature/location/application/place_dto";
-import { Place } from "~/features/user/feature/location/domain/place";
+import { Region } from "~~/features/region/domain/region";
+import type { PlaceDto } from "~~/features/user/feature/location/application/place_dto";
+import { Place } from "~~/features/user/feature/location/domain/place";
 
 export class PlaceMapper {
 

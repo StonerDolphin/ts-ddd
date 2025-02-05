@@ -1,5 +1,6 @@
-import { RegionDto } from "~/features/region/application/region_dto";
-import { service } from "~/server/dependencies/region";
+import { RegionDto } from "~~/features/region/application/region_dto"
+import { service } from "~~/server/utils/dependencies/region"
+
 
 
 export default defineEventHandler(async (event) => {

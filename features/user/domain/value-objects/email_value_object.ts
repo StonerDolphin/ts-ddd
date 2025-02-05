@@ -1,4 +1,4 @@
-import {InvalidEmail} from "~/features/user/domain/exceptions/email_exception";
+import {InvalidEmail} from "~~/features/user/domain/exceptions/email_exception";
 
 export class Email {
     private constructor(

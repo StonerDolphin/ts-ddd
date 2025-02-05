@@ -1,8 +1,8 @@
-import { Phone } from "~/features/user/domain/value-objects/value_object_phone";
-import { UUID } from "~/features/shared/value_object_uuid";
-import { Email } from "~/features/user/domain/value-objects/email_value_object";
-import { GenderType } from "~/features/user/domain/value-objects/gender_value_object";
-import { Place } from "~/features/user/feature/location/domain/place";
+import { Phone } from "~~/features/user/domain/value-objects/value_object_phone";
+import { UUID } from "~~/features/shared/value_object_uuid";
+import { Email } from "~~/features/user/domain/value-objects/email_value_object";
+import { GenderType } from "~~/features/user/domain/value-objects/gender_value_object";
+import { Place } from "~~/features/user/feature/location/domain/place";
 
 export class User {
     private constructor(

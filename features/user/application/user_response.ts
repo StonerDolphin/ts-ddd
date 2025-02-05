@@ -1,4 +1,4 @@
-import type { PlaceDto } from "~/features/user/feature/location/application/place_dto";
+import type { PlaceDto } from "~~/features/user/feature/location/application/place_dto";
 
 export class UserResponse {
     constructor(public id: string,
